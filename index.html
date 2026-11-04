@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- 1) ชื่อบนแท็บเบราว์เซอร์ -->
+<title>ระบบบริหารงบประมาณโครงการกลุ่มกิจการนักเรียน</title>
+<!-- 2) ไอคอนแท็บ: วางไฟล์ logo.png (ดาวน์โหลดได้จากหน้า โลโก้และข้อความ ในระบบ) ไว้โฟลเดอร์เดียวกับไฟล์นี้ -->
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta name="theme-color" content="#1e4d36">
+<meta name="author" content="นายนิมิต ศรีวัฒนะ">
+<style>
+  html, body { margin: 0; height: 100%; background: #1e4d36; }
+  body { font-family: "Sarabun", "Noto Sans Thai", system-ui, sans-serif; }
+  .wait {
+    position: fixed; inset: 0; display: flex; flex-direction: column; gap: 14px;
+    align-items: center; justify-content: center; color: #dfe6f0; font-size: 15px; text-align: center; padding: 24px;
+  }
+  .wait img { width: 64px; height: 64px; object-fit: contain; background: #fff; border-radius: 12px; padding: 6px; }
+  .wait a { color: #fff; }
+  iframe {
+    position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh;
+    border: 0; display: block; background: transparent;
+  }
+</style>
+</head>
+<body>
+  <!-- แสดงระหว่างรอระบบโหลด (iframe จะทับเมื่อโหลดเสร็จ) -->
+  <div class="wait">
+    <img src="logo.png" alt="" onerror="this.remove()">
+    <div>กำลังเปิดระบบ…</div>
+    <div style="font-size:13px;color:#aebbd0">ถ้ารอนานเกินไป <a id="direct" href="#" target="_top">เปิดระบบโดยตรง</a></div>
+  </div>
+
+  <iframe id="app"
+    title="ระบบบริหารงบประมาณโครงการกลุ่มกิจการนักเรียน"
+    allow="clipboard-write; fullscreen"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <script>
+    // 3) ใส่ลิงก์เว็บแอปของคุณ (ลงท้ายด้วย /exec) แก้จุดเดียวตรงนี้
+    var APP_URL = 'https://script.google.com/macros/s/AKfycbx_BQ7yrtNq4q1_SppbasOyQ5UM9FOK6y-0mWEhsNfMTdhFnqDJ0GDqmP5dfhmiSVWF/exec';
+    document.getElementById('app').src = APP_URL;
+    document.getElementById('direct').href = APP_URL;
+  </script>
+</body>
+</html>
